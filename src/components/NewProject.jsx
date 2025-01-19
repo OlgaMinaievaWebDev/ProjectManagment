@@ -1,3 +1,5 @@
+import Input from "./Input";
+
 function NewProject() {
   return (
     <div>
@@ -10,18 +12,9 @@ function NewProject() {
         </li>
       </menu>
       <div>
-        <p>
-          <label htmlFor="">Title</label>
-          <input type="text" />
-        </p>
-        <p>
-          <label htmlFor="">Description</label>
-          <textarea />
-        </p>
-        <p>
-          <label htmlFor="">Due Date</label>
-          <input type="text" />
-        </p>
+        <Input label="Title" />
+        <Input label="Description" textarea />
+        <Input label="Due Date" />
       </div>
     </div>
   );
