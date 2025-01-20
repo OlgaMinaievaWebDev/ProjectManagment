@@ -5,7 +5,7 @@
 -      - Show a list of projects
 -      - Have an "Add Project" button that navigates
 -        to form to add to the list of project
--      - List of projects should be navigatable to the
+-      - List of projects should navigate to the
 -        project detail view
 -      # Content
 -      - main content window where you will display projects
