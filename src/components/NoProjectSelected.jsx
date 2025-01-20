@@ -1,4 +1,4 @@
-import image from "../assets/no-projects.svg";
+import image from "../assets/no-projects.png";
 import Button from "./Button";
 function NoProjectSelected() {
   return (
