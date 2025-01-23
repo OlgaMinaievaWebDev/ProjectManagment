@@ -12,6 +12,15 @@ function NewProject({ onAdd }) {
     const enteredDueDate = dueDate.current.value;
 
     //validation...
+    if (
+      enteredTitle.trim() === "" ||
+      enteredDescription.trim() === "" ||
+      enteredDueDate.trim() === ""
+    ) {
+      //show error model
+      s;
+    }
+
     onAdd({
       title: enteredTitle,
       description: enteredDescription,
