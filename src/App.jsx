@@ -48,11 +48,13 @@ function App() {
     (project) => project.id === projectsState.selectedProjectId
   );
 
-  let content = <SelectedProject project={selectedProject} />;
+  let content;
   if (projectsState.selectedProjectId === null) {
     content = (
       <NewProject onAdd={handleAddProject} onCancel={handleCancelAddProject} />
     );
+  } else if (selectedProject) {
+    content = <SelectedProject project={selectedProject} />;
   } else {
     content = <NoProjectSelected onStartAddProject={handleStartAddProject} />;
   }
