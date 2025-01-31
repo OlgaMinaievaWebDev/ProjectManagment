@@ -1,12 +1,19 @@
 import Tasks from "./Tasks";
 
-function SelectedProject({ project, onDelete }) {
-  const { title, date, description, tasks } = project;
+function SelectedProject({
+  project,
+  onDelete,
+  onAddTask,
+  onDeleteTask,
+  tasks,
+}) {
+  const { title, date, description, id } = project;
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
+
   return (
     <div className="w-[35rem] mt-16">
       <header className="pb-4 mb-4 border-b-2 border-stone-300">
@@ -14,7 +21,7 @@ function SelectedProject({ project, onDelete }) {
           <h1 className="text-3xl font-bold text-stone-300 mb-2">{title}</h1>
           <button
             className="text-stone-600 hover:text-stone-950"
-            onClick={() => onDelete(project.id)}
+            onClick={() => onDelete(id)}
           >
             Delete
           </button>
@@ -22,7 +29,7 @@ function SelectedProject({ project, onDelete }) {
         <p className="mb-4 text-stone-400">{formattedDate}</p>
         <p className="text-stone-600 whitespace-pre-wrap">{description}</p>
       </header>
-      <Tasks />
+      <Tasks onAdd={onAddTask} onDelete={onDeleteTask} tasks={tasks} />
     </div>
   );
 }
